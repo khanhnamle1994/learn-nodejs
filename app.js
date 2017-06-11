@@ -1,9 +1,4 @@
-var firstname = 'James';
+var greet = require('./greet');
 
-(function (lastname) {
-  var firstname = 'Hanna';
-  console.log(firstname);
-  console.log(lastname);
-}('Saba'));
-
-console.log(firstname);
+greet.english();
+greet.spanish();
