@@ -1,18 +1,19 @@
-function Person(firstname, lastname) {
-  this.firstname = firstname;
-  this.lastname = lastname;
+// pass by value
+function change(b) {
+  b = 2;
 }
 
-Person.prototype.greet = function() {
-  console.log('Hello, ' + this.firstname + ' ' + this.lastname);
-};
+var a = 1;
+change(a);
+console.log(a);
 
-var james = new Person('James', 'Le');
-james.greet();
+// pass by reference
+function changeObj(d) {
+  d.prop1 = function() {};
+  d.prop2 = {};
+}
 
-var harsh = new Person('Harsh', 'Sahgal');
-harsh.greet();
-
-console.log(james.__proto__);
-console.log(harsh.__proto__);
-console.log(james.__proto__ === harsh.__proto__);
+var c = {};
+c.prop1 = {};
+changeObj(c);
+console.log(c);
