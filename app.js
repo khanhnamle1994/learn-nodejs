@@ -1,7 +1,10 @@
-var name = 'James Le';
+var obj = {
+  name: 'James Le',
+  greet: function() {
+    console.log(`Hello ${ this.name }`);
+  }
+}
 
-var greet = 'Hello ' + name;
-var greet2 = `Hello ${ name }`;
-
-console.log(greet);
-console.log(greet2);
+obj.greet();
+obj.greet.call({ name: 'James Le' });
+obj.greet.apply({ name: 'James Le' });
