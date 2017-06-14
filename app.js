@@ -1,11 +1,9 @@
-'use strict';
+var buf = new Buffer('Hello', 'utf8');
 
-var Greetr = require('./greetr');
+console.log(buf);
+console.log(buf.toString());
+console.log(buf.toJSON());
+console.log(buf[2]);
 
-var greeter1 = new Greetr();
-
-greeter1.on('greet', function(data) {
-  console.log('Someone greeted!: ' + data);
-});
-
-greeter1.greet('James');
+buf.write('wo');
+console.log(buf.toString());
