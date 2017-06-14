@@ -1,6 +1,17 @@
-var buffer = new ArrayBuffer(8);
-var view = new Int32Array(buffer);
-view[0] = 5;
-view[1] = 15;
-view[2] = 30;
-console.log(view);
+function greet(callback) {
+  console.log('Hello!');
+  var data = {
+    name: 'James Le'
+  };
+  callback(data);
+}
+
+greet(function(data) {
+  console.log('The callback was invoked!');
+  console.log(data);
+});
+
+greet(function(data) {
+  console.log('A different callback was invoked!');
+  console.log(data.name);
+});
