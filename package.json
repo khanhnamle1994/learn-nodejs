@@ -18,5 +18,8 @@
   "homepage": "https://github.com/khanhnamle1994/learn-nodejs#readme",
   "dependencies": {
     "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
   }
 }
