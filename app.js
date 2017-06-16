@@ -1,24 +1,14 @@
-var http = require('http');
-var fs = require('fs');
+var express = require('express');
+var app = express();
 
-http.createServer(function(req, res) {
+var port = process.env.PORT || 3000;
 
-  if (req.url === '/') {
-     fs.createReadStream(__dirname + '/index.htm').pipe(res);
-  }
+app.get('/', function(req, res) {
+  res.send('<html><head></head><body><h1>Hello world!</h1></body></html>');
+});
 
-  else if (req.url === '/api') {
-    res.writeHead(200, { 'Content-Type' : 'application/json' });
-    var obj = {
-      firstname: 'James',
-      lastname: 'Le'
-    };
-    res.end(JSON.stringify(obj));
-  }
+app.get('/api', function(req, res) {
+  res.json({ firstname: 'James', lastname: 'Le'});
+});
 
-  else {
-    res.writeHead(404);
-    res.end();
-  }
-
-}).listen(1337, '127.0.0.1');
+app.listen(3000);
